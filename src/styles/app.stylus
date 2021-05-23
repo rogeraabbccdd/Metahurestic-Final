@@ -1,0 +1,14 @@
+.matrix td
+  width 100px
+  height 100px
+  cursor pointer
+  &.blocked
+    background black
+  &.start
+    background var(--bs-danger)
+    color white
+  &.end
+    background var(--bs-success)
+    color white
+  &.path
+    background var(--bs-warning)

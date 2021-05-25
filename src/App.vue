@@ -30,7 +30,7 @@
           label.col-2.col-form-label(for="inputS") 演算法
           .col-10
             select.form-select#inputS(v-model="heuristic")
-              option(v-for="(h, i) in heuristicOptions" :key="i" :value="h") {{ h }}
+              option(v-for="(h, i) in heuristicOptions" :key="i" :value="h.value") {{ h.name }}
         input.btn.btn-primary(type="button" value="產生路徑" @click="getPath")
 </template>
 
@@ -52,10 +52,10 @@ const matrix = reactive([
 const heuristic = ref('manhattan')
 
 const heuristicOptions = reactive([
-  'manhattan',
-  'chebyshev',
-  'euclidean',
-  'octile'
+  { value: 'manhattan', name: '曼哈頓距離' },
+  { value: 'chebyshev', name: '柴比雪夫距離' },
+  { value: 'euclidean', name: '歐幾里得距離' },
+  { value: 'octile', name: 'Octile 距離' }
 ])
 
 const showPath = ref(false)

@@ -9,9 +9,12 @@
           :class="{blocked: mm == 1, start: mm == 2, end: mm == 3, path: mm == 4 && resultPath.show}"
           @click="block(i, j)"
         )
-          span(v-if="mm == 2") 開始
-          span(v-else-if="mm == 3") 結束
     p 路徑長度: {{ resultPath.length }}
+    span.text-danger 紅色是開始位置
+    br
+    span.text-success 綠色是結束位置
+    br
+    span 點擊表格放置黑色無法通過的區塊
     hr
     .row
       .col-6

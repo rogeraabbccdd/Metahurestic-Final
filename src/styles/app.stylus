@@ -1,14 +1,22 @@
-.matrix td
-  width 100px
-  height 100px
-  cursor pointer
-  &.blocked
-    background black
-  &.start
-    background var(--bs-danger)
-    color white
-  &.end
-    background var(--bs-success)
-    color white
-  &.path
-    background var(--bs-warning)
+body
+  background #35363a
+
+.matrix
+  width 500px
+  height 500px
+  table-layout fixed
+  td
+    cursor pointer
+    &.blocked
+      background black
+    &.start
+      background var(--bs-danger)
+      color white
+    &.end
+      background var(--bs-success)
+      color white
+    &.path
+      background var(--bs-warning)
+
+#inputS
+  text-transform capitalize

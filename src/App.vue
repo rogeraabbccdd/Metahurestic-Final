@@ -1,16 +1,17 @@
 <template lang="pug">
-.container
-  h1.text-center 最佳路徑
+.container.text-white
   .col-12.text-center
-    table.table.matrix
+    h1.my-3 最佳路徑
+    table.table.matrix.mx-auto
       tr(v-for="(m, i) in matrix" :key="i")
         td.border(
           v-for="(mm, j) in m" :key="j"
-          :class="{blocked: mm == 1, start: mm == 2, end: mm == 3, path: mm == 4 && showPath}"
+          :class="{blocked: mm == 1, start: mm == 2, end: mm == 3, path: mm == 4 && resultPath.show}"
           @click="block(i, j)"
         )
           span(v-if="mm == 2") 開始
           span(v-else-if="mm == 3") 結束
+    p 路徑長度: {{ resultPath.length }}
     hr
     .row
       .col-6
@@ -58,12 +59,16 @@ const heuristicOptions = reactive([
   { value: 'octile', name: 'Octile 距離' }
 ])
 
-const showPath = ref(false)
+const resultPath = reactive({show: false, length: 0})
 
 const input = reactive({w: 5, h: 3})
 
 const block = (i, j) => {
-  if (showPath.value)  showPath.value = false
+  if (resultPath.show) {
+    resultPath.show = false
+    resultPath.length = 0
+  }
+
   if (matrix[i][j] === 1) {
     matrix[i][j] = 0
   } else if (matrix[i][j] !== 2 && matrix[i][j] !== 3) {
@@ -113,7 +118,8 @@ const getPath = () => {
   for (const i in path) {
     matrix[path[i][1]][path[i][0]] = 4
   }
-  showPath.value = true
+  resultPath.show = true
+  resultPath.length = path.length
 }
 
 </script>

@@ -30,10 +30,10 @@
         input.btn.btn-primary(type="button" value="更新格子" @click="generateGrid")
       .col-6
         h1 設定
-        .row.my-3
+        .row.my-3(v-if="!heuristicDisabled")
           label.col-2.col-form-label(for="inputS") 演算法
           .col-10
-            select.form-select#inputS(v-model="heuristic" :disabled="heuristicDisabled")
+            select.form-select#inputS(v-model="heuristic")
               option(v-for="(h, i) in heuristicOptions" :key="i" :value="h.value") {{ h.name }}
         .row.my-3
           label.col-2.col-form-label(for="inputF") 搜尋法

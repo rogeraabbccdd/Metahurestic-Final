@@ -14,7 +14,7 @@
     br
     span.text-success 綠色是結束位置
     br
-    span 點擊表格放置黑色無法通過的區塊
+    span 點擊表格放置無法通過的區塊
     hr
     .row
       .col-6

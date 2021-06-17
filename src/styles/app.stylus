@@ -2,8 +2,8 @@ body
   background #35363a
 
 .matrix
-  width 500px
-  height 500px
+  width 800px
+  height 800px
   table-layout fixed
   td
     cursor pointer

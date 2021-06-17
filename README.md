@@ -3,7 +3,7 @@
 Final Project of Metahurestic course.
 
 ## Install
-- Install [Node.js](https://nodejs.org/en/) and [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
+- Install [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/)
 - Clone the repo.
 - Run `yarn` to install dependencies.
 - Run `yarn dev` to start a dev server.
